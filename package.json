@@ -2,17 +2,7 @@
   "name": "stylefire",
   "version": "1.1.8",
   "description": "Performant, simplified stylers for CSS, SVG, path and DOM scroll.",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "files": [
-    "css",
-    "svg",
-    "index.js",
-    "styler",
-    "scroll",
-    "index.d.ts",
-    "dist"
-  ],
+  "main": "src/index.ts",
   "scripts": {
     "watch": "tsc -w",
     "build": "tsc && webpack && npm run measure",
