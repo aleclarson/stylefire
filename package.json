@@ -48,6 +48,6 @@
   },
   "dependencies": {
     "framesync": "^3.0.2",
-    "style-value-types": "^1.0.0"
+    "style-value-types": "^1.0.3"
   }
 }
