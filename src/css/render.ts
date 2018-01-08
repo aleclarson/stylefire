@@ -44,6 +44,12 @@ export default function buildStylePropertyString(
     let key = changedValues[i];
     let value: any = state[key];
 
+    // Deleted properties must be special cased
+    if (typeof value === 'undefined') {
+      element.style.removeProperty(key);
+      continue;
+    }
+
     // If this is a number or object and we have filter, apply filter
     const valueType = getValueType(key);
     if (valueType && (typeof value === 'number' || typeof value === 'object') && valueType.transform) {
@@ -70,5 +76,9 @@ export default function buildStylePropertyString(
     propertyString += ';' + prefixer('transform', true) + ':' + transformString;
   }
 
-  element.style.cssText += propertyString;
+  if (propertyString) {
+    element.style.cssText += propertyString;
+  } else if (!element.style.length) {
+    element.removeAttribute('style');
+  }
 }

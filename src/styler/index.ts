@@ -9,7 +9,11 @@ const createStyler = ({ onRead, onRender, aliasMap = {}, useCache = true }: Conf
   const setValue = (unmappedKey: string, value: any) => {
     const key = aliasMap[unmappedKey] || unmappedKey;
     const currentValue = state[key];
-    state[key] = value;
+    if (value !== null) {
+      state[key] = value;
+    } else {
+      delete state[key];
+    }
 
     if (state[key] !== currentValue) {
       hasChanged = true;
