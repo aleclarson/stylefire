@@ -15,14 +15,6 @@
     "type": "git",
     "url": "git+https://github.com/Popmotion/stylefire.git"
   },
-  "keywords": [
-    "css",
-    "svg",
-    "svg",
-    "path",
-    "scroll",
-    "animation"
-  ],
   "author": "Matt Perry",
   "license": "MIT",
   "bugs": {
