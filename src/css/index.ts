@@ -18,7 +18,7 @@ const cssStyler = createStyler({
         ? valueType.default || 0
         : 0;
     } else {
-      const domValue = window.getComputedStyle(element, null).getPropertyValue(prefixer(key)) || 0;
+      const domValue = window.getComputedStyle(element, null).getPropertyValue(prefixer(key));
       return (valueType && valueType.parse) ? valueType.parse(domValue) : domValue;
     }
   },
