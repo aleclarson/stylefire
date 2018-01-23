@@ -39,7 +39,7 @@
     "testRegex": "/_tests/.*\\.(ts|tsx|js)$"
   },
   "dependencies": {
-    "framesync": "^3.0.2",
+    "framesync": "aleclarson/framesync#1.1.2",
     "style-value-types": "^1.0.3"
   }
 }

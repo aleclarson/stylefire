@@ -1,4 +1,4 @@
-import { onFrameRender } from 'framesync';
+import frame from 'framesync';
 import { ChangedValues, Config, Props, State, Styler } from './types';
 
 const createStyler = ({ onRead, onRender, aliasMap = {}, useCache = true }: Config) => (props?: Props): Styler => {
@@ -22,7 +22,7 @@ const createStyler = ({ onRead, onRender, aliasMap = {}, useCache = true }: Conf
       }
     }
 
-    if (hasChanged) onFrameRender(render);
+    if (hasChanged) frame.once('render', render, true);
   };
 
   const render = () => {
