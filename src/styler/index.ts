@@ -14,15 +14,15 @@ const createStyler = ({ onRead, onRender, aliasMap = {}, useCache = true }: Conf
     } else {
       delete state[key];
     }
-
     if (state[key] !== currentValue) {
-      hasChanged = true;
       if (changedValues.indexOf(key) === -1) {
         changedValues.push(key);
       }
+      if (!hasChanged) {
+        hasChanged = true;
+        frame.once('render', render, true);
+      }
     }
-
-    if (hasChanged) frame.once('render', render, true);
   };
 
   const render = () => {
